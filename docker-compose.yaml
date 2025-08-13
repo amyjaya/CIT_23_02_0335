@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - webnet
+
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin
+    ports:
+      - "8000:6000"
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks:
+      - webnet
+
+  redis:
+    image: redis:7
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+volumes:
+  redis_data:
+
+networks:
+  webnet:
+
