@@ -4,7 +4,7 @@
 **Registration Number:** CIT-23-02-0335  
 **Course:** CCS3308 - Virtualization and Containers  
 
-## 📌 Application Overview
+##  Application Overview
 This project is a **Docker-based multi-service web application** with:
 - **User Registration & Message Board** (Flask web service)
 - **Admin Dashboard** to view stats & reset data (Flask admin service)
@@ -24,7 +24,7 @@ The Admin dashboard provides:
 
 ---
 
-## 🛠 Deployment Requirements
+##  Deployment Requirements
 - **Docker** (version 20+ recommended)  
 - **Docker Compose**  
 - **Git**  
@@ -32,7 +32,7 @@ The Admin dashboard provides:
 
 ---
 
-## 🌐 Services & Ports
+##  Services & Ports
 | Service | Description           | Port (Host:Container) |
 |---------|----------------------|-----------------------|
 | Web     | Flask User Interface | 5000:5000             |
@@ -41,13 +41,13 @@ The Admin dashboard provides:
 
 ---
 
-## 📂 Network and Volume Details
+##  Network and Volume Details
 - **Network:** Automatically created by Docker Compose to link containers.
 - **Volume:** `redis_data` — stores all Redis database data persistently.
 
 ---
 
-## ⚙️ Container Configuration
+##  Container Configuration
 ### **Web Service**
 - Built from `Dockerfile.web`
 - Runs Flask app (`web/app.py`)
@@ -65,14 +65,14 @@ The Admin dashboard provides:
 
 ---
 
-## 📜 Container List
+##  Container List
 1. **web** — User registration, message board, visit tracking
 2. **admin** — Admin dashboard, reset function
 3. **redis** — Data storage for users and messages
 
 ---
 
-## 🚀 Instructions
+## Instructions
 
 # Create application resources
 ./prepare-app.sh
